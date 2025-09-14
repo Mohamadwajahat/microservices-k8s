@@ -1,8 +1,13 @@
-FROM python:alpine3.7
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-ENV PORT 5000
-EXPOSE 5000
-ENTRYPOINT [ "python" ]
-CMD [ "app.py" ]
+version : "3.9"
+services:
+  flask-api:
+    image: wajju786/flask-micro-api:latest
+    container_name: flask-micro-api
+    ports:
+       - "5000:5000"
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
