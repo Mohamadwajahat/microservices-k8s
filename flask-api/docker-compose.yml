@@ -1,0 +1,16 @@
+
+version : '3.9'
+services:
+  flask-api: 
+    image: wajju786/flask-micro-api:latest
+    container_name: flask-micro-api 
+    ports: 
+       - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/
+
+  mongo-db:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"  
