@@ -6,10 +6,8 @@ services:
     container_name: flask-micro-api 
     ports: 
        - "5000:5000"
-    environment:
-      - MONGO_URI=mongodb://mongodb:27017/
 
-  mongo-db:
+  mongo:
     image: mongo
     container_name: mongo
     ports:
